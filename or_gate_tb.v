@@ -9,7 +9,7 @@ or_gate or1(a, b, out);
 initial begin
 // Create a dumpfile to store output datat for graph
 $dumpfile("or_gate.vcd");
-$dumpvars("0, or_gate_tb");    
+$dumpvars(0, or_gate_tb);    
 // Set value and add delay 
 a = 0; b = 0;
 #10
