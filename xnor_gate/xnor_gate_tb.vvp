@@ -1,0 +1,54 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7fb05e406c60 .scope module, "xnor_gate_tb" "xnor_gate_tb" 2 2;
+ .timescale 0 0;
+v0x7fb05e41b080_0 .var "a", 0 0;
+v0x7fb05e41b120_0 .var "b", 0 0;
+v0x7fb05e41b1d0_0 .net "out", 0 0, L_0x7fb05e41b2a0;  1 drivers
+S_0x7fb05e406dd0 .scope module, "xnor1" "xnor_gate" 2 7, 3 3 0, S_0x7fb05e406c60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x7fb05e41b2a0 .functor XNOR 1, v0x7fb05e41b080_0, v0x7fb05e41b120_0, C4<0>, C4<0>;
+v0x7fb05e407680_0 .net "a", 0 0, v0x7fb05e41b080_0;  1 drivers
+v0x7fb05e41aee0_0 .net "b", 0 0, v0x7fb05e41b120_0;  1 drivers
+v0x7fb05e41af80_0 .net "out", 0 0, L_0x7fb05e41b2a0;  alias, 1 drivers
+    .scope S_0x7fb05e406c60;
+T_0 ;
+    %vpi_call 2 11 "$dumpfile", "xnor_gate.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fb05e406c60 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fb05e41b080_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fb05e41b120_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fb05e41b080_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fb05e41b120_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fb05e41b080_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fb05e41b120_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fb05e41b080_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fb05e41b120_0, 0, 1;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "xnor_gate_tb.v";
+    "./xnor_gate.v";
